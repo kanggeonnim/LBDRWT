@@ -4,7 +4,7 @@ const { RTMClient } = require('@slack/rtm-api');
 
 const tokenModule = require('./data.js');
 
-token = tokenModule.getToken();
+const token = tokenModule.getToken();
 console.log(token);
 
 const rtm = new RTMClient(token);
@@ -14,7 +14,7 @@ const greeting = require('./greeting');
 const square = require('./square');
 
 rtm.on('message', (message) => {
-  const { channel } = essage;
+  const { channel } = message;
   const { text } = message;
 
   if (!isNaN(text)) {
