@@ -13,8 +13,5 @@ module.exports = {
   },
   rules: {
     'linebreak-style': 0,
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
+  }
 };
