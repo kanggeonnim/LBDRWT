@@ -2,9 +2,11 @@ require('dotenv').config();
 
 const { RTMClient } = require('@slack/rtm-api');
 
+// eslint-disable-next-line import/extensions
 const tokenModule = require('./data.js');
 
 const token = tokenModule.getToken();
+// eslint-disable-next-line no-console
 console.log(token);
 
 const rtm = new RTMClient(token);
@@ -17,7 +19,7 @@ rtm.on('message', (message) => {
   const { channel } = message;
   const { text } = message;
 
-  if (!isNaN(text)) {
+  if (Number(text)) {
     square(rtm, text, channel);
   } else {
     switch (text) {
