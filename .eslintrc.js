@@ -1,10 +1,9 @@
 module.exports = {
-  root: true,
   env: {
     browser: true,
     es2021: true,
   },
-  extends: 'airbnb-base',
+  extends: ['airbnb-base'],
   overrides: [
   ],
   parserOptions: {
@@ -13,6 +12,6 @@ module.exports = {
   },
   rules: {
     'linebreak-style': 0,
-    'no-console': 'off',
   },
+  root: true,
 };

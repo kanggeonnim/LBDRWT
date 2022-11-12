@@ -1,18 +1,15 @@
 require('dotenv').config();
 
 const { RTMClient } = require('@slack/rtm-api');
-
-// eslint-disable-next-line import/extensions
-const tokenModule = require('./data.js');
+const tokenModule = require('./data');
 
 const token = tokenModule.getToken();
-// eslint-disable-next-line no-console
 console.log(token);
 
 const rtm = new RTMClient(token);
 rtm.start();
 // const token = t.token;
-const greeting = require('./greeting');
+const greeting = require('./greeting').default;
 const square = require('./square');
 
 rtm.on('message', (message) => {
