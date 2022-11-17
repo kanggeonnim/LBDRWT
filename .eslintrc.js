@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
@@ -13,5 +14,4 @@ module.exports = {
   rules: {
     'linebreak-style': 0,
   },
-  root: true,
 };
