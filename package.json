@@ -15,8 +15,9 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.7.1",
-    "husky": "^8.0.0"
+    "husky": "^8.0.0",
+    "mocha": "^10.1.0",
+    "prettier": "^2.7.1"
   },
   "dependencies": {
     "@slack/rtm-api": "^6.0.0",
