@@ -17,7 +17,7 @@ rtm.on('message', (message) => {
   const { text } = message;
   if (Number(text)) {
     square(rtm, text, channel);
-  } else if (text.includes('교수님')) {// 교수님을 포함하고 있으면
+  } else if (text.includes('교수님')) { // 교수님을 포함하고 있으면
     const name = text.substring(0, text.length - 4);// 교수님을 제외한 이름을 name에 넣어줌
     getOffice(rtm, name, channel);// getOffice를 실행
   } else {
