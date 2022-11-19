@@ -31,6 +31,7 @@
 
 # LBDRWT feature -l
 # 11-20-22 Issue #11 완료
+
 *index.js 수정
   *'ㅇㅇㅇ 교수님' 입력 구분
   *'ㅇㅇㅇ'으로 교체
