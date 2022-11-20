@@ -10,7 +10,6 @@ const rtm = new RTMClient(token);
 rtm.start();
 
 const greeting = require('./greeting/greeting');
-// const greetingTest = require('./greeting/greetingTest');
 const square = require('./square/square');
 
 rtm.on('message', (message) => {
@@ -23,11 +22,6 @@ rtm.on('message', (message) => {
     switch (text) {
       case 'hi':
         greeting(rtm, channel); // 확률 테스트 시 이 부분을 주석처리 후 테스트
-
-        // 실제 테스트 시 for문을 주석처리 후 테스트
-        // for (let i = 0; i < 100000; i += 1) {
-        //   greetingTest();
-        // }
         break;
       default:
         rtm.sendMessage("I'm alive", channel);
