@@ -12,6 +12,10 @@ rtm.start();
 const greeting = require('./greeting/greeting');
 // const greetingTest = require('./greeting/greetingTest');
 const square = require('./square/square');
+const transformSchedule = require('./schedule/transformSchedule');
+const checkSchedule = require('./schedule/checkSchedule');
+
+const scheduleDict = transformSchedule();
 
 rtm.on('message', (message) => {
   const { channel } = message;
@@ -19,6 +23,9 @@ rtm.on('message', (message) => {
 
   if (Number(text)) {
     square(rtm, text, channel);
+  } else if (/[0-9][0-9]?\/[0-9][0-9]?/.test(text)) {
+    console.log(scheduleDict);
+    checkSchedule(rtm, channel, scheduleDict, text);
   } else {
     switch (text) {
       case 'hi':
