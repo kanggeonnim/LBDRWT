@@ -14,14 +14,12 @@ const getOffice = function (rtm, name, channel) {
   // deptObject에서 name을 포함하는 key를 찾아서 그 key의 value를 office에 저장
   const office = Object.keys(deptObject).find((key) => key.includes(name));
   // 모든 key value를 콘솔 출력
-  console.log(deptObject);
   // office가 undefined이면 office가 없다는 메시지를 보내고
   // office가 undefined가 아니면 office의 value를 보낸다.
-  if (office === undefined) {
-    rtm.sendMessage('office가 없습니다.', channel);
-  } else {
+  if (office !== undefined) {
     rtm.sendMessage(`${office}의 사무실은 ${deptObject[office]}입니다.`, channel);
-  }
+    return true;
+  } return false;
 };
 
 module.exports = getOffice;

@@ -1,8 +1,7 @@
-/* eslint-disable no-multi-assign */
-const request = require('request');
+/* const request = require('request');
 
-let result;
 module.exports = translate = function (text) {
+  let result = '';
   const api_url = 'https://openapi.naver.com/v1/papago/n2mt';
   const options = {
     url: api_url,
@@ -10,9 +9,9 @@ module.exports = translate = function (text) {
     headers: { 'X-Naver-Client-Id': '4LoX8t3uVILQYgA1a1Es', 'X-Naver-Client-Secret': 'RF6Y1vJlzt' },
   };
   request.post(options, (error, response, body) => {
-    if (!error && response.statusCode == 200) {
+    if (!error && response.statusCode == 200) {kjlk
       body = JSON.parse(body);
-      const { translatedText } = body.message.result;
+      const translatedText = body.message.result;
       console.log(translatedText, '번역');
       result = translatedText;
     } else {
@@ -22,3 +21,5 @@ module.exports = translate = function (text) {
   });
   return result;
 };
+// 기능 추가 예상되어 남겨둠
+ */
