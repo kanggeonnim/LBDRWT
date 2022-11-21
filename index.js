@@ -10,6 +10,7 @@ const rtm = new RTMClient(token);
 rtm.start();
 
 const greeting = require('./greeting/greeting');
+
 // const greetingTest = require('./greeting/greetingTest');
 const square = require('./square/square');
 const transformSchedule = require('./schedule/transformSchedule');
