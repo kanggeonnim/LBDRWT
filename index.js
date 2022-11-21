@@ -24,20 +24,12 @@ rtm.on('message', (message) => {
   if (Number(text)) {
     square(rtm, text, channel);
   } else if (/[0-9][0-9]?\/[0-9][0-9]?/.test(text)) {
-    console.log(scheduleDict);
     checkSchedule(rtm, channel, scheduleDict, text);
+  } else if (/^hi$/i.test(text)) {
+    greeting(rtm, channel);
+  } else if (/^[a-zA-Z]([-_. ]?[0-9a-zA-Z])*$/i.text(text)) {
+    console.log('학과안내');
   } else {
-    switch (text) {
-      case 'hi':
-        greeting(rtm, channel); // 확률 테스트 시 이 부분을 주석처리 후 테스트
-
-        // 실제 테스트 시 for문을 주석처리 후 테스트
-        // for (let i = 0; i < 100000; i += 1) {
-        //   greetingTest();
-        // }
-        break;
-      default:
-        rtm.sendMessage("I'm alive", channel);
-    }
+    rtm.sendMessage("I'm alive", channel);
   }
 });
