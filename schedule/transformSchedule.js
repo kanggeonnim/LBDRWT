@@ -7,7 +7,7 @@ const transformSchedule = function () {
   const scheduleDict = {}; // 학사 정보가 변환되어 저장 될 Dictionary
 
   // 학사일정 정보가 담긴 txt파일을 읽어옴.
-  fs.readFile('./schedule/haksa.txt', 'utf8', (err, data) => {
+  fs.readFile('./source/haksa.txt', 'utf8', (err, data) => {
     if (err) {
       console.error(err);
       return;
