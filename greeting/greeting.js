@@ -12,7 +12,7 @@ const getRandomGreeting = require('./randomGreeting');
  * @param {*} channel // 현재 연결된 채널
  */
 const greeting = function (rtm, channel) {
-  const msg = getRandomGreeting();
+  const msg = getRandomGreeting.getRandomGreeting();
   rtm.sendMessage(msg, channel);
 };
 module.exports = greeting;

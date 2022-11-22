@@ -20,7 +20,6 @@ const getRandomGreeting = function () {
   return msg;
 };
 
-
 const getGreetings = function () {
   return greetings;
 };
