@@ -46,6 +46,5 @@ rtm.on('message', (message) => {
     getOffice(rtm, text, channel);
   } else {
     rtm.sendMessage("I'm alive", channel);
-
   }
 });

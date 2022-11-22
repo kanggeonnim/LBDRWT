@@ -8,7 +8,6 @@ const transformSchedule = function () {
 
   // 학사일정 정보가 담긴 txt파일을 읽어옴.
   fs.readFile('./source/haksa.txt', 'utf8', (err, data) => {
-
     if (err) {
       console.error(err);
       return;
