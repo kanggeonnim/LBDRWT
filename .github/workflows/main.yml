@@ -24,6 +24,7 @@ jobs:
         npm install mocha -g
     - name: Unit Testing
       run:
+        mocha ./test/square.spec.js
         mocha ./test/greeting.spec.js
 
       env:
