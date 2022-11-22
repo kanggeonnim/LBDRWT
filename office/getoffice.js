@@ -11,8 +11,8 @@ const getOffice = function (rtm, name, channel) {
     acc[key] = value;
     return acc;
   }, {});
-  //console.log(deptObject);
-  //return deptObject;
+  // console.log(deptObject);
+  // return deptObject;
   // deptObject에서 name을 포함하는 key를 찾아서 그 key의 value를 office에 저장
   const office = Object.keys(deptObject).find((key) => key.includes(name));
   // 모든 key value를 콘솔 출력
