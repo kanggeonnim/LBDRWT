@@ -14,7 +14,7 @@ const getdata = function (num) {
   }
   const key = Object.keys(deptObject);
   const key_1 = key.map((item) => item.toLowerCase());
-  console.log(key_1[num]);
+  //console.log(key_1[num]);
   return key_1[num];
 };
 module.exports = getdata;

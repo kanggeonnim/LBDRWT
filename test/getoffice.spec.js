@@ -11,12 +11,12 @@ describe('===getoffcie test start', () => {
     const testingCount = 10;
     for (let i = 0; i < testingCount; i += 1) {
       const num = getdata(i);
-      console.log(num);
+      // console.log(num);
       const [result, location] = getoffcie(num);
-      console.log(result);
+      // console.log(result);
       if (result === num) {
         count -= 1;
-        console.log(count);
+        // console.log(count);
       }
     }
     assert.equal(count, 0);
