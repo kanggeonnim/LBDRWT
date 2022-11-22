@@ -20,4 +20,9 @@ const getRandomGreeting = function () {
   return msg;
 };
 
-module.exports = getRandomGreeting;
+
+const getGreetings = function () {
+  return greetings;
+};
+
+module.exports = { getRandomGreeting, getGreetings };

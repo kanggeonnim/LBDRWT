@@ -10,11 +10,9 @@ const rtm = new RTMClient(token);
 rtm.start();
 
 const greeting = require('./greeting/greeting');
-// const greetingTest = require('./greeting/greetingTest');
 const square = require('./square/square');
 const transformSchedule = require('./schedule/transformSchedule');
 const checkSchedule = require('./schedule/checkSchedule');
-
 const scheduleDict = transformSchedule();
 
 rtm.on('message', (message) => {
@@ -30,6 +28,12 @@ rtm.on('message', (message) => {
   } else if (/^[a-zA-Z]([-_. ]?[0-9a-zA-Z])*$/i.text(text)) {
     console.log('학과안내');
   } else {
-    rtm.sendMessage("I'm alive", channel);
+    switch (text) {
+      case 'hi':
+        greeting(rtm, channel);
+        break;
+      default:
+        rtm.sendMessage("I'm alive", channel);
+    }
   }
 });
