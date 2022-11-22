@@ -19,4 +19,5 @@ jobs:
         
       - name: Unit Test
         run:
+          npm install mocha -g
           mocha
