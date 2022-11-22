@@ -4,7 +4,7 @@
 const fs = require('fs');
 
 const getdata = function (num) {
-  const dept = fs.readFileSync('./data/dept.txt', 'utf8');
+  const dept = fs.readFileSync('./source/dept.txt', 'utf8');
   const deptArray = dept.split('\r\n');
   const key = deptArray.map((item) => item.split('-')[0]);
   console.log(key[num]);
