@@ -22,7 +22,7 @@ jobs:
     - name: Unit Test
       run:
         npm install mocha -g
-        mocha
+        mocha .\test\greeting.spec.js
 
       env:
         CI: true
