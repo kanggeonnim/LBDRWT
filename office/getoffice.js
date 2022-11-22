@@ -11,15 +11,15 @@ const getOffice = function (rtm, name, channel) {
     acc[key] = value;
     return acc;
   }, {});
-  // console.log(deptObject);
-  // return deptObject;
+  //console.log(deptObject);
+  //return deptObject;
   // deptObject에서 name을 포함하는 key를 찾아서 그 key의 value를 office에 저장
   const office = Object.keys(deptObject).find((key) => key.includes(name));
   // 모든 key value를 콘솔 출력
   // office가 undefined이면 office가 없다는 메시지를 보내고
   // office가 undefined가 아니면 office의 value를 보낸다.
   if (office !== undefined) {
-    rtm.sendMessage(`${office}의 사무실은 ${deptObject[office]}입니다.`, channel);
+    rtm.sendMessage(`${office}의 사무실은 ${deptObject[office]}입니다.`, channel); // test시 주석처리
     console.log(`${office}의 사무실은 ${deptObject[office]} 입니다.`);
     return true;
   } return false;
