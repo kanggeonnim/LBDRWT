@@ -2,7 +2,7 @@ const fs = require('fs');
 
 const getOffice = function (rtm, name, channel) {
   // data/dept.txt 파일을 읽어서 dept에 저장
-  const dept = fs.readFileSync('./data/dept.txt', 'utf8');
+  const dept = fs.readFileSync('./source/dept.txt', 'utf8');
   // dept를 배열로 만들어서 deptArray에 저장
   const deptArray = dept.split('\r\n');
   // deptArray를 '-'를 기준으로 나눠서 key value로 만들어서 deptObject에 저장
