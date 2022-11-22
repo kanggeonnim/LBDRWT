@@ -15,6 +15,7 @@ const greeting = require('./greeting/greeting');
 const square = require('./square/square');
 const transformSchedule = require('./schedule/transformSchedule');
 const checkSchedule = require('./schedule/checkSchedule');
+
 const getOffice = require('./office/getoffice');
 
 const scheduleDict = transformSchedule();
@@ -45,5 +46,6 @@ rtm.on('message', (message) => {
     getOffice(rtm, text, channel);
   } else {
     rtm.sendMessage("I'm alive", channel);
+
   }
 });
