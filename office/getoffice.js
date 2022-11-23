@@ -1,8 +1,6 @@
 const fs = require('fs');
 
-const sendOffice = require('./sendoffice');
-
-const getOffice = function (rtm, name, channel) {
+const getOffice = function (name) {
   const dept = fs.readFileSync('./source/dept.txt', 'utf8');
   const deptArray = dept.split('\r\n');
   const deptObject = {};
@@ -13,13 +11,13 @@ const getOffice = function (rtm, name, channel) {
   }
   const office = Object.keys(deptObject).find((key) => key.includes(name));
   if (office !== undefined) {
-    sendOffice(rtm, office, deptObject[office], channel);
-    return true;
+    // office 와 deptObject[office]를 반환
+    return [office, deptObject[office]];
   } return false;
 };
 module.exports = getOffice;
 /**
- * @param {string} rtmetOffice.js는 
+ * @param {string} rtmetOffice.js
  * @param {string} name
  * @param {string} channel
  * @return {boolean}

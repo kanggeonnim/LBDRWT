@@ -17,6 +17,7 @@ const transformSchedule = require('./schedule/transformSchedule');
 const checkSchedule = require('./schedule/checkSchedule');
 
 const getOffice = require('./office/getoffice');
+const sendOffice = require('./office/sendoffice');
 
 const scheduleDict = transformSchedule();
 let isSchedule = false;
@@ -43,7 +44,7 @@ rtm.on('message', (message) => {
     greeting(rtm, channel);
     // 학과를 입력 받았을 때, 해당 과의 위치를 알려줌.
   } else if (/^[a-zA-Z]([-_. ]?[0-9a-zA-Z])*$/i.test(text)) {
-    getOffice(rtm, text, channel);
+    sendOffice(rtm, text, channel);
   } else {
     rtm.sendMessage("I'm alive", channel);
   }
