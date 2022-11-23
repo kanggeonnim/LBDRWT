@@ -26,6 +26,7 @@ jobs:
       run:
         mocha ./test/square.spec.js
         mocha ./test/greeting.spec.js
-
+        mocha ./test/schedule.spec.js
+        mocha ./test/getOffice.spec.js
       env:
         CI: true
