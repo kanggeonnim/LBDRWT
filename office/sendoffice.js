@@ -15,4 +15,3 @@ const sendOffice = function (rtm, input, channel) {
   console.log(getoffcie(input));
 };
 module.exports = sendOffice;
-//fucking

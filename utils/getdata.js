@@ -13,8 +13,7 @@ const getdata = function (num) {
     deptObject[deptArraySplit[0].toLowerCase()] = deptArraySplit[1];
   }
   const key = Object.keys(deptObject);
-  const key_1 = key.map((item) => item.toLowerCase());
-  //console.log(key_1[num]);
-  return key_1[num];
+  const crab = key.map((item) => item.toLowerCase());
+  return crab[num];
 };
 module.exports = getdata;

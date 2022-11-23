@@ -16,7 +16,6 @@ const square = require('./square/square');
 const transformSchedule = require('./schedule/transformSchedule');
 const checkSchedule = require('./schedule/checkSchedule');
 
-const getOffice = require('./office/getoffice');
 const sendOffice = require('./office/sendoffice');
 
 const scheduleDict = transformSchedule();
