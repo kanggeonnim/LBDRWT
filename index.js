@@ -3,8 +3,6 @@ require('dotenv').config();
 const { RTMClient } = require('@slack/rtm-api');
 const tokenModule = require('./data/token');
 
-
-
 const token = tokenModule.getToken();
 console.log('[Chatbot Start] : ', token);
 
