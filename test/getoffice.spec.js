@@ -14,7 +14,7 @@ describe('===getoffcie test start', () => {
       // console.log(num);
       const [result, location] = getoffcie(num);
       // console.log(result);
-      console.log(location);
+      if (location === null) { break; }
       if (result === num) {
         count -= 1;
         // console.log(count);
