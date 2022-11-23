@@ -1,39 +1,5 @@
 {
-  "name": "chatbot",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha",
-    "prepare": "husky install"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "eslint": "^8.27.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.0",
-    "mocha": "^10.1.0",
-    "prettier": "^2.7.1"
-  },
   "dependencies": {
-    "@slack/rtm-api": "^6.0.0",
-    "data.js": "^0.0.0",
-    "dotenv": "^16.0.3",
-    "request": "^2.88.2"
-  },
-  "directories": {
-    "test": "mocha"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kanggeonnim/LBDRWT.git"
-  },
-  "bugs": {
-    "url": "https://github.com/kanggeonnim/LBDRWT/issues"
-  },
-  "homepage": "https://github.com/kanggeonnim/LBDRWT#readme",
-  "description": ""
+    "husky": "^8.0.2"
+  }
 }
