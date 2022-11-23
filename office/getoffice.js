@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 const getOffice = function (name) {
+  const lowerName = name.toLowerCase();
   const dept = fs.readFileSync('./source/dept.txt', 'utf8');
   const deptArray = dept.split('\r\n');
   const deptObject = {};
@@ -9,11 +10,11 @@ const getOffice = function (name) {
     // eslint-disable-next-line prefer-destructuring
     deptObject[deptArraySplit[0].toLowerCase()] = deptArraySplit[1];
   }
-  const office = Object.keys(deptObject).find((key) => key.includes(name));
+  const office = Object.keys(deptObject).find((key) => key.includes(lowerName));
   if (office !== undefined) {
     // office 와 deptObject[office]를 반환
     return [office, deptObject[office]];
-  } return false;
+  } return [lowerName, '이 세상에 없는 곳'];
 };
 module.exports = getOffice;
 /**
