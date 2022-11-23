@@ -50,7 +50,6 @@ const transformSchedule = function () {
       }
     }
   });
-  console.log(scheduleDict);
   return scheduleDict;
 };
 
