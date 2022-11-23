@@ -2,18 +2,19 @@
 // eslint-disable-next-line no-unused-vars
 const assert = require('assert');
 
-const getoffcie = require('../office/getoffice');
-const getdata = require('../utils/getdata');
+const getOffice = require('../office/getOffice');
+const getData = require('../utils/getData');
 
-describe('===getoffcie test start', () => {
-  it('getoffcie test End===', (done) => {
+describe('===getOffice test start', () => {
+  it('getOffice test End===', (done) => {
     let count = 10;
     const testingCount = 10;
     for (let i = 0; i < testingCount; i += 1) {
-      const num = getdata(i);
+      const num = getData(i);
       // console.log(num);
-      const [result, location] = getoffcie(num);
+      const [result, location] = getOffice(num);
       // console.log(result);
+      if (location === null) { break; }
       if (result === num) {
         count -= 1;
         // console.log(count);

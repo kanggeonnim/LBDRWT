@@ -3,7 +3,7 @@
 // deptArray를 '-'를 기준으로 나눠서 key value로 만들어서 key와 value를 key_1 배열에 저장
 const fs = require('fs');
 
-const getdata = function (num) {
+const getData = function (num) {
   const dept = fs.readFileSync('./source/dept.txt', 'utf8');
   const deptArray = dept.split('\r\n');
   const deptObject = {};
@@ -13,8 +13,7 @@ const getdata = function (num) {
     deptObject[deptArraySplit[0].toLowerCase()] = deptArraySplit[1];
   }
   const key = Object.keys(deptObject);
-  const key_1 = key.map((item) => item.toLowerCase());
-  //console.log(key_1[num]);
-  return key_1[num];
+  const crab = key.map((item) => item.toLowerCase());
+  return crab[num];
 };
-module.exports = getdata;
+module.exports = getData;
