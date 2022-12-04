@@ -16,7 +16,8 @@ const square = require('./square/square');
 const transformSchedule = require('./schedule/transformSchedule');
 const checkSchedule = require('./schedule/checkSchedule');
 
-const sendOffice = require('./office/sendOffice');
+// const getOffice = require('./office/getoffice');
+const sendOffice = require('./office/sendoffice');
 
 const scheduleDict = transformSchedule();
 let isSchedule = false;
@@ -29,6 +30,8 @@ rtm.on('message', (message) => {
   if (isSchedule === true) {
     if (/[0-9][0-9]?\/[0-9][0-9]?/.test(text)) {
       checkSchedule(rtm, channel, scheduleDict, text);
+    } else if (/^[a-zA-Z]([-_. ]?[0-9a-zA-Z])*$/i.test(text)) {
+      sendOffice(rtm, text, channel);
     } else {
       rtm.sendMessage('잘못된 입력입니다.', channel);
     }
@@ -42,8 +45,9 @@ rtm.on('message', (message) => {
   } else if (/^hi$/i.test(text)) {
     greeting(rtm, channel);
     // 학과를 입력 받았을 때, 해당 과의 위치를 알려줌.
-  } else if (/^[a-zA-Z]([-_. ]?[0-9a-zA-Z])*$/i.test(text)) {
-    sendOffice(rtm, text, channel);
+  } else if (/^학과[ ]?안내$/i.test(text)) {
+    rtm.sendMessage('학과를 입력해주세요.', channel);
+    isSchedule = true;
   } else {
     rtm.sendMessage("I'm alive", channel);
   }
