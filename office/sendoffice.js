@@ -7,11 +7,18 @@
  * office와 location을 받아서
  * office의 사무실은 location입니다. 라는 메시지를 보낸다.
  */
+const getOffice = require('./getOffice');
 const getoffcie = require('./getOffice');
 
 const sendOffice = function (rtm, input, channel) {
-  const [office, location] = getoffcie(input);
-  rtm.sendMessage(`${office}의 사무실은 ${location}입니다.`, channel); // test시 주석처리
+  console.log(getOffice(input));
+  const location = getoffcie(input);
+
+  if (location === false) {
+    rtm.sendMessage('해당 부서는 존재하지 않습니다.', channel);
+    return false;
+  }
+  rtm.sendMessage(`${location}`, channel); // test시 주석처리
   console.log(getoffcie(input));
 };
 module.exports = sendOffice;
