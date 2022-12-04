@@ -7,7 +7,7 @@
  * office와 location을 받아서
  * office의 사무실은 location입니다. 라는 메시지를 보낸다.
  */
-const getOffcie = require('./getoffice');
+const getOffcie = require('./getOffice');
 
 const sendOffice = function (rtm, input, channel) {
   const [location] = getOffcie(input);

@@ -2,8 +2,8 @@
 // eslint-disable-next-line no-unused-vars
 const assert = require('assert');
 
-const getOffice = require('../office/getoffice');
-const getData = require('../utils/getdata');
+const getOffice = require('../office/getOffice');
+const getData = require('../utils/getData');
 
 describe('===getOffice test start', () => {
   it('getOffice test End===', (done) => {
