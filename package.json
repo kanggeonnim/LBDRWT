@@ -22,6 +22,8 @@
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
     "@slack/rtm-api": "^6.0.0",
+    "axios": "^1.2.0",
+    "cheerio": "^1.0.0-rc.12",
     "data.js": "^0.0.0",
     "dotenv": "^16.0.3",
     "request": "^2.88.2"

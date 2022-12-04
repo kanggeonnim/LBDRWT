@@ -15,10 +15,18 @@ const greeting = require('./greeting/greeting');
 const square = require('./square/square');
 const transformSchedule = require('./schedule/transformSchedule');
 const checkSchedule = require('./schedule/checkSchedule');
-
+const getMenuMessage = require('./menu/getMenuMessage');
+const sendMenuMessage = require('./menu/sendMenuMessage');
 const sendOffice = require('./office/sendOffice');
 
 const scheduleDict = transformSchedule();
+let menuFlag = false;
+let menuData = [];
+getMenuMessage().then((res) => {
+  menuData = res;
+  menuFlag = true;
+});
+
 let isSchedule = false;
 let isOffice = false;
 
@@ -53,6 +61,10 @@ rtm.on('message', (message) => {
   } else if (/학과[ ]?안내$/.test(text)) {
     rtm.sendMessage('안내 받을 힉과를 이야기해주세요. 예시) Computer Science and Engineering', channel);
     isOffice = true;
+  } else if (/^[a-zA-Z]([-_. ]?[0-9a-zA-Z])*$/i.test(text)) {
+    sendOffice(rtm, text, channel);
+  } else if (text === '오늘 밥 뭐야') {
+    sendMenuMessage(rtm, channel, menuData, menuFlag);
   } else {
     rtm.sendMessage("I'm alive", channel);
   }
