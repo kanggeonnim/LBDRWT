@@ -1,19 +1,20 @@
 const fs = require('fs');
 
 const getOffice = function (name) {
-  const lowerName = name?.toLowerCase();
+  const lowerName = name.toLowerCase();
+  const lowerNameNoSpace = lowerName.replace(/\s/g, '');
   const dept = fs.readFileSync('./source/dept.txt', 'utf8');
   const deptArray = dept.split('\r\n');
   const deptObject = {};
   for (let i = 0; i < deptArray.length; i += 1) {
     const deptArraySplit = deptArray[i].split('-');
     // eslint-disable-next-line prefer-destructuring
-    deptObject[deptArraySplit[0].toLowerCase()] = deptArraySplit[1];
+    deptObject[deptArraySplit[0].toLowerCase().replace(/\s/g, '')] = deptArray[i];
   }
-  const office = Object.keys(deptObject).find((key) => key.includes(lowerName));
+  const office = Object.keys(deptObject).find((key) => key.includes(lowerNameNoSpace));
   if (office !== undefined) {
     // office 와 deptObject[office]를 반환
-    return [office, deptObject[office]];
+    return [deptObject[office]];
   } return [lowerName, '이 세상에 없는 곳'];
 };
 module.exports = getOffice;
