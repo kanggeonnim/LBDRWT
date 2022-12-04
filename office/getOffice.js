@@ -13,7 +13,7 @@ const getOffice = function (name) {
   const office = Object.keys(deptObject).find((key) => key.includes(lowerNameNoSpace));
   if (office !== undefined) {
     // office 와 deptObject[office]를 반환
-    return [deptObject[office]];
+    return deptObject[office];
   } return false;
 };
 module.exports = getOffice;
