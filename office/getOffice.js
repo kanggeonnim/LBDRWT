@@ -2,7 +2,6 @@ const fs = require('fs');
 
 const getOffice = function (name) {
   const lowerNameNoSpace = name.toLowerCase().replace(/\s/g, '');
-  console.log(lowerNameNoSpace);
   const dept = fs.readFileSync('./source/dept.txt', 'utf8');
   const deptArray = dept.split('\r\n');
   const deptObject = {};
@@ -12,7 +11,6 @@ const getOffice = function (name) {
     deptObject[deptArraySplit[0].toLowerCase().replace(/\s/g, '')] = deptArray[i];
   }
   const office = Object.keys(deptObject).find((key) => key.includes(lowerNameNoSpace));
-  console.log(office);
   if (office !== undefined) {
     // office 와 deptObject[office]를 반환
     return [deptObject[office]];
