@@ -65,7 +65,7 @@ rtm.on('message', (message) => {
     rtm.sendMessage('안내 받을 힉과를 이야기해주세요. 예시) Computer Science and Engineering', channel);
     isOffice = true;
     // 밥 알려주는 기계
-  } else if (/오늘[ ]?밥[ ]?[뭐야]?/.test(text)) {
+  } else if (/[오늘]?[ ]?밥[ ]?[뭐야]?/.test(text)) {
     sendMenuMessage(rtm, channel, menuData, menuFlag);
     // 쓰잘대기 없는 말하면 대답은 해주기..
   } else {
