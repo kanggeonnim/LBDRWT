@@ -6,10 +6,14 @@
  * @param {*} date 학사일정이 궁금한 날짜
  */
 const checkSchedule = function (rtm, channel, dict, date) {
-  if (date in dict) {
-    rtm.sendMessage(`${date}은 ${dict[date]}입니다.`, channel);
+  // 09/01과 같은 입력을 9/1로 통일 시켜주는 부분.
+  const dateArr = String(date).split('/');
+  const transDate = `${String(Number(dateArr[0]))}/${String(Number(dateArr[1]))}`;
+
+  if (transDate in dict) {
+    rtm.sendMessage(`${transDate}은 ${dict[transDate]}입니다.`, channel);
   } else {
-    rtm.sendMessage(`${date}은 학사일정이 없습니다.`, channel);
+    rtm.sendMessage(`${transDate}은 학사일정이 없습니다.`, channel);
   }
 };
 
