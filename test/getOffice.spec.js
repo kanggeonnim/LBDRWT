@@ -12,7 +12,7 @@ describe('===getOffice test start', () => {
     for (let i = 0; i < testingCount; i += 1) {
       const num = getData(i);
       // console.log(num);
-      const [location] = getOffice(num);
+      const location = getOffice(num);
       // console.log(location);
       if (location === null) { break; }
       if (location.toLowerCase().replace(/\s/g, '').includes(num.replace(/\s/g, '').toLowerCase())) {
