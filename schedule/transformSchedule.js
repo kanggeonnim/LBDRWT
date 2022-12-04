@@ -43,7 +43,11 @@ const transformSchedule = function () {
 
     // 사전형태로 변환.
     for (let i = 0; i < scheduleTrans.length; i += 2) {
-      scheduleDict[scheduleTrans[i]] = scheduleTrans[i + 1];
+      if (scheduleTrans[i] in scheduleDict) {
+        scheduleDict[scheduleTrans[i]] = `${scheduleDict[scheduleTrans[i]]}, ${scheduleTrans[i + 1]}`;
+      } else {
+        scheduleDict[scheduleTrans[i]] = scheduleTrans[i + 1];
+      }
     }
   });
   return scheduleDict;

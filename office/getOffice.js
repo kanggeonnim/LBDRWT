@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const getOffice = function (name) {
-  const lowerName = name.toLowerCase();
+  const lowerName = name?.toLowerCase();
   const lowerNameNoSpace = lowerName.replace(/\s/g, '');
   const dept = fs.readFileSync('./source/dept.txt', 'utf8');
   const deptArray = dept.split('\r\n');
