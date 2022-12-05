@@ -3,8 +3,7 @@ const fs = require('fs');
 const getOffice = function (name) {
   const lowerNameNoSpace = name?.toLowerCase().replace(/\s/g, '');
   const dept = fs.readFileSync('./source/dept.txt', 'utf8');
-  const deptArray = dept.split('\r\n');
-  console.log(deptArray);
+  const deptArray = dept.split(/\r\n|\n/);
   const deptObject = {};
   for (let i = 0; i < deptArray.length; i += 1) {
     const deptArraySplit = deptArray[i].split('-');
