@@ -1,4 +1,5 @@
 const fs = require('fs');
+const getSimularOffice = require('./getSimularOffice');
 
 const getOffice = function (name) {
   const lowerName = name.toLowerCase();
@@ -10,12 +11,18 @@ const getOffice = function (name) {
     const deptArraySplit = deptArray[i].split('-');
     // eslint-disable-next-line prefer-destructuring
     deptObject[deptArraySplit[0].toLowerCase().replace(/\s/g, '')] = deptArray[i];
+    // 빈칸이면 삭제
+    if (deptArraySplit[0] === '') {
+      delete deptObject[deptArraySplit[0]];
+    }
   }
+
   const office = Object.keys(deptObject).find((key) => key.includes(lowerNameNoSpace));
+  console.log(lowerNameNoSpace);
   if (office !== undefined) {
     // office 와 deptObject[office]를 반환
-    return [deptObject[office]];
-  } return [lowerName, '이 세상에 없는 곳'];
+    return console.log([deptObject[office]]);
+  } return getSimularOffice(deptObject, lowerNameNoSpace);// [lowerName, '이 세상에 없는 곳'];
 };
 module.exports = getOffice;
 /**

@@ -26,6 +26,7 @@
     "cheerio": "^1.0.0-rc.12",
     "data.js": "^0.0.0",
     "dotenv": "^16.0.3",
+    "js-levenshtein": "^1.1.6",
     "request": "^2.88.2"
   },
   "directories": {
