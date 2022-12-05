@@ -8,3 +8,6 @@ Accounting - College of Commerce 2, 9999
 International Trade - College of Commerce 1, 9999
 Korean Language and Literature - College of Humanities, 320
 Library and Information Science - College of Humanities, 427
+
+
+
