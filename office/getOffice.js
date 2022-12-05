@@ -1,7 +1,9 @@
 const fs = require('fs');
+const editDistance = require('../utils/editDistance');
 
 const getOffice = function (name) {
   const lowerNameNoSpace = name?.toLowerCase().replace(/\s/g, '');
+
   const dept = fs.readFileSync('./source/dept.txt', 'utf8');
   const deptArray = dept.split(/\r\n|\n/);
   const deptObject = {};
@@ -9,12 +11,23 @@ const getOffice = function (name) {
     const deptArraySplit = deptArray[i].split('-');
     // eslint-disable-next-line prefer-destructuring
     deptObject[deptArraySplit[0].toLowerCase().replace(/\s/g, '')] = deptArray[i];
+    console.log(deptObject);
   }
   const office = Object.keys(deptObject).find((key) => key.includes(lowerNameNoSpace));
   if (office !== undefined) {
     // office 와 deptObject[office]를 반환
     return deptObject[office];
-  } return false;
+  }
+  // office가 undefined면 editDistance를 이용해서 가장 가까운 값을 찾아서 반환
+  const min = Object.keys(deptObject).reduce((acc, cur) => {
+    const distance = editDistance(lowerNameNoSpace, cur);
+    if (distance < acc.distance) {
+      return { distance, office: deptObject[cur] };
+    }
+    return acc;
+  }, { distance: 100, office: null });
+  return min.office;
+  // return false;
 };
 module.exports = getOffice;
 /**
