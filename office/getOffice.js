@@ -1,20 +1,30 @@
 const fs = require('fs');
+const getSimularOffice = require('./getSimularOffice');
 
 const getOffice = function (name) {
-  const lowerName = name?.toLowerCase();
+  const lowerName = name.toLowerCase();
+  const lowerNameNoSpace = lowerName.replace(/\s/g, '');
   const dept = fs.readFileSync('./source/dept.txt', 'utf8');
-  const deptArray = dept.split('\r\n');
+  const deptArray = dept.split(/\r\n|\n/);
   const deptObject = {};
   for (let i = 0; i < deptArray.length; i += 1) {
     const deptArraySplit = deptArray[i].split('-');
     // eslint-disable-next-line prefer-destructuring
-    deptObject[deptArraySplit[0].toLowerCase()] = deptArraySplit[1];
+    deptObject[deptArraySplit[0].toLowerCase().replace(/\s/g, '')] = deptArray[i];
+    // 빈칸이면 삭제
+    if (deptArraySplit[0] === '') {
+      delete deptObject[deptArraySplit[0]];
+    }
   }
-  const office = Object.keys(deptObject).find((key) => key.includes(lowerName));
+
+  const office = Object.keys(deptObject).find((key) => key.includes(lowerNameNoSpace));
   if (office !== undefined) {
     // office 와 deptObject[office]를 반환
-    return [office, deptObject[office]];
-  } return [lowerName, '이 세상에 없는 곳'];
+    return [deptObject[office]];
+  }
+  const simOfficeInfo = getSimularOffice(deptObject, lowerNameNoSpace);
+  const simOffice = deptObject[simOfficeInfo].split(' - ');
+  return [`혹시 ${simOffice[0]}를 찾고 계신건가요? ${deptObject[simOfficeInfo]}입니다.`];// [lowerName, '이 세상에 없는 곳'];
 };
 module.exports = getOffice;
 /**

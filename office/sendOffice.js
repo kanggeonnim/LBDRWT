@@ -10,8 +10,8 @@
 const getOffcie = require('./getOffice');
 
 const sendOffice = function (rtm, input, channel) {
-  const [office, location] = getOffcie(input);
-  rtm.sendMessage(`${office}의 사무실은 ${location}입니다.`, channel); // test시 주석처리
-  console.log(getOffcie(input));
+  const [location] = getOffcie(input);
+  rtm.sendMessage(`${location}`, channel); // test시 주석처리
+  // console.log(getOffcie(input));
 };
 module.exports = sendOffice;
