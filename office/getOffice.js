@@ -18,11 +18,13 @@ const getOffice = function (name) {
   }
 
   const office = Object.keys(deptObject).find((key) => key.includes(lowerNameNoSpace));
-  console.log(lowerNameNoSpace);
   if (office !== undefined) {
     // office 와 deptObject[office]를 반환
-    return console.log([deptObject[office]]);
-  } return getSimularOffice(deptObject, lowerNameNoSpace);// [lowerName, '이 세상에 없는 곳'];
+    return [deptObject[office]];
+  }
+  const simOfficeInfo = getSimularOffice(deptObject, lowerNameNoSpace);
+  const simOffice = deptObject[simOfficeInfo].split(' - ');
+  return [`혹시 ${simOffice[0]}를 찾고 계신건가요? ${deptObject[simOfficeInfo]}입니다.`];// [lowerName, '이 세상에 없는 곳'];
 };
 module.exports = getOffice;
 /**
