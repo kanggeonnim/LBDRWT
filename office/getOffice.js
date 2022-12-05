@@ -11,7 +11,7 @@ const getOffice = function (name) {
     const deptArraySplit = deptArray[i].split('-');
     // eslint-disable-next-line prefer-destructuring
     deptObject[deptArraySplit[0].toLowerCase().replace(/\s/g, '')] = deptArray[i];
-    console.log(deptObject);
+    // console.log(deptObject);
   }
   const office = Object.keys(deptObject).find((key) => key.includes(lowerNameNoSpace));
   if (office !== undefined) {
