@@ -22,7 +22,7 @@ jobs:
     - name: Install Mocha
       run:
         npm install mocha -g
-         npm install --save js-levenshtein
+        npm install --save js-levenshtein
     - name: Unit Testing
       run:
         mocha ./test/square.spec.js
