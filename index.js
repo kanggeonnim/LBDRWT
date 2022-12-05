@@ -57,15 +57,15 @@ rtm.on('message', (message) => {
   } else if (/^hi$/i.test(text)) {
     greeting(rtm, channel);
     // 학사 정보를 입력 받았을 때 isSchedule flag를 true로 설정
-  } else if (/^[학사]?[ ]?일정$/.test(text)) {
+  } else if (/학사[ ]?일정/.test(text)) {
     rtm.sendMessage('안내 받을 날짜를 이야기해주세요.예시) 12/25', channel);
     isSchedule = true;
     // 학과 안내를 입력 받았을 때 isOffice flag를 true로 설정
-  } else if (/학과[ ]?[안내]?$/.test(text)) {
-    rtm.sendMessage('안내 받을 힉과를 이야기해주세요. 예시) Computer Science and Engineering', channel);
+  } else if (/학과[ ]?안내/.test(text)) {
+    rtm.sendMessage('안내 받을 학과를 이야기해주세요. 예시) Computer Science and Engineering', channel);
     isOffice = true;
     // 밥 알려주는 기계
-  } else if (/[오늘]?[ ]?밥[ ]?[뭐야]?/.test(text)) {
+  } else if (/오늘[ ]?밥[ ]?뭐야/.test(text)) {
     sendMenuMessage(rtm, channel, menuData, menuFlag);
     // 쓰잘대기 없는 말하면 대답은 해주기..
   } else {
