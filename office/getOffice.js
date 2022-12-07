@@ -1,5 +1,5 @@
 const fs = require('fs');
-const getSimularOffice = require('./getSimularOffice');
+const getSimilarOffice = require('./getSimilarOffice');
 
 const getOffice = function (name) {
   const lowerName = name.toLowerCase();
@@ -16,13 +16,12 @@ const getOffice = function (name) {
       delete deptObject[deptArraySplit[0]];
     }
   }
-
-  const office = Object.keys(deptObject).find((key) => key.includes(lowerNameNoSpace));
+  const office = deptObject[(key) => key.match(lowerNameNoSpace)];
   if (office !== undefined) {
     // office 와 deptObject[office]를 반환
     return [deptObject[office]];
   }
-  const simOfficeInfo = getSimularOffice(deptObject, lowerNameNoSpace);
+  const simOfficeInfo = getSimilarOffice(deptObject, lowerNameNoSpace);
   const simOffice = deptObject[simOfficeInfo].split(' - ');
   return [`혹시 ${simOffice[0]}를 찾고 계신건가요? ${deptObject[simOfficeInfo]}입니다.`];// [lowerName, '이 세상에 없는 곳'];
 };
