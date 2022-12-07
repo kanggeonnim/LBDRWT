@@ -9,7 +9,7 @@ let simLen = 0xff;
  * @param {*} text 검색할 단어를 입력합니다.
  * @returns 가장 유사한 단어를 반환합니다.
  */
-const getSimularOffice = function (dictionary, text) {
+const getSimilarOffice = function (dictionary, text) {
   const keys = Object.keys(dictionary);
   for (let i = 0; i < keys.length; i += 1) {
     const distance = levenshtein(text, keys[i]);
@@ -20,4 +20,4 @@ const getSimularOffice = function (dictionary, text) {
   }
   return simOffice;
 };
-module.exports = getSimularOffice;
+module.exports = getSimilarOffice;
