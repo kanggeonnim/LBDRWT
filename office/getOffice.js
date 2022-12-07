@@ -16,8 +16,7 @@ const getOffice = function (name) {
       delete deptObject[deptArraySplit[0]];
     }
   }
-
-  const office = Object.keys(deptObject).find((key) => key.includes(lowerNameNoSpace));
+  const office = deptObject[(key) => key.match(lowerNameNoSpace)];
   if (office !== undefined) {
     // office 와 deptObject[office]를 반환
     return [deptObject[office]];
