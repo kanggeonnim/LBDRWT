@@ -5,7 +5,7 @@ const getRating = require('./getRating');
 const url = 'https://sobi.chonbuk.ac.kr/menu/week_menu.php';
 const baseSelector = 'div.section div.ttArea:nth-child(2) table.tblType03 tbody tr:first-child ';
 const params = [3, 4, 5, 6, 7];
-
+const star = ['★☆☆', '★★☆', '★★★'];
 const getMenuMessage = async function () {
   const messages = [];
   for await (const param of params) {
@@ -13,7 +13,7 @@ const getMenuMessage = async function () {
     const selector = (param === 3) ? `${baseSelector}td:nth-child(${param}) ul li > span` : `${baseSelector}td:nth-child(${param}) ul li > font`;
     const result = await webScraping(url, selector);
     const score = getRating(result[0]);
-    message = `${result}(으)로 별점 ${score}점입니다.`;
+    message = `${result}(으)입니다.\n평점은 ${star[score - 1]}입니다.`;
     messages.push(message);
   }
   console.log(messages);
