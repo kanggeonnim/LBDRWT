@@ -13,7 +13,7 @@
 > - JS런타임 툴:  Node.js(18.12.0 버전)
 > - 코드편집기: VSCode
 > - 코드 컨벤션: ESLint(Airbnb-base) 및 Prettier
-> - Git Hook: Husky를 통한 강제
+> - Git Hook: Husky를 통한 강제(pre-commit, commit-msg)
 > - 주석: Doxygen 활용
 >
 ## ⚙ 테스트 및 운영 환경

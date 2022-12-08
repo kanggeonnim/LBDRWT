@@ -11,11 +11,9 @@ describe('===getOffice test start', () => {
     const testingCount = 10;
     for (let i = 0; i < testingCount; i += 1) {
       const num = getData(i);
-      // console.log(num);
-      const [result, location] = getOffice(num);
-      // console.log(result);
+      const [location] = getOffice(num);
       if (location === null) { break; }
-      if (result === num) {
+      if (location.toLowerCase().replace(/\s/g, '').includes(num)) {
         count -= 1;
         // console.log(count);
       }
