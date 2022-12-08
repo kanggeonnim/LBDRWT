@@ -15,9 +15,7 @@ const getSimilarOffice = function (dictionary, text) {
     if (simLen > distance) { // 가장 유사한 단어를 찾아냈다면 저장함.
       simLen = distance;
       simOffice = keys[i];
-      // console.log(`simOffice is ${simOffice} : ${simLen}`);
     }
-    // console.log(`similar is (${text}, ${keys[i]}), dist: ${distance}`);
   }
   return simOffice;
 };
