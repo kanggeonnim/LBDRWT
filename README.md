@@ -27,6 +27,7 @@
 > 5. Open a terminal window in vscode and type the following:
 > ```
 > npm init
+> npm install @slack/rtm-api dotenv
 > ```
 > 6. Create a new directory named **'data'**, and create **token.js** in the 'data directory'.
 > ```
@@ -44,14 +45,63 @@
 > node index.js
 > ```
 > 8. When it runs normally, you can see the token printed out.
-
+> #
+> - ### FOR NEW COLLABORATORS
+> 1. Complete all of the above guides.(For git clone, use github desktop or git bash.)
+> 2. Install the following from VSCode's extensions:
+> ![image](https://user-images.githubusercontent.com/61104736/206609028-55d060e1-ce5f-4c2a-ab4e-65753538cf2e.png)
+> 3. Open a terminal window in vscode and type the following:
+> ```
+> npm install -g eslint eslint-config-airbnb-base eslint-plugin-import
+> eslint --init
+> ```
+> ![image](https://user-images.githubusercontent.com/61104736/206612844-dc05321e-d241-4171-b52c-8c313906cc52.png)
+> ```
+> npx install-peerdeps --dev eslint-config-airbnb
+> ```
+> 4. Edit .eslintrc.js
+> ```
+> module.exports = {
+>  root: true,
+>  env: {
+>    browser: true,
+>    es2021: true,
+>  },
+>  extends: ['airbnb-base'],
+>  overrides: [
+>  ],
+>  parserOptions: {
+>    ecmaVersion: 'latest',
+>    sourceType: 'module',
+>  },
+>  rules: {
+>    'linebreak-style': 0,
+>  },
+>};
+> ```
+> 5. Install husky for git hook
+> ```
+> npx husky-init
+> npm install
+> npx husky add .husky/pre-commit 'eslint . --ext .js'
+> ```
+> Delete 'npm test' in pre-commit file.
+> 6. Install commit lint
+> ```
+> npm install --dev @commitlint/config-conventional @commitlint/cli
+> ```
+> 7. Now you are ready to work together.
 ## 🌈 모든 버전
-> ### - 1.1.0 (최신)
-> - 랜덤 인사 추가
-> - 학사 일정 기능 추가
-> - 오피스 위치 추가
+> ### - 1.2.0 (Latest)
+> - Add feature for menu evaluation and guidance
+> - Improve feature for department office information
+> - Change the default notification message 
+> ### - 1.1.0
+> - Improve feature for random greeting
+> - Add feature for academic calendar guide
+> - Add feature for department office information
 > ### - 1.0.0
-> - 인사 기능
-> - 그외의 단어 입력 시 I'm alive 출력
+> - Add feature for greeting
+> - Output 'I'm alive' for other inputs
 >
 #
