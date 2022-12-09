@@ -2,6 +2,7 @@ const fs = require('fs');
 const getSimilarOffice = require('./getSimilarOffice');
 
 const getOffice = function (name) {
+  // console.log(`${name} getOffice 입력된 값`);
   const lowerNameNoSpace = name?.toLowerCase().replace(/\s/g, '');
 
   const dept = fs.readFileSync('./source/dept.txt', 'utf8');
