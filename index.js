@@ -17,6 +17,7 @@ const transformSchedule = require('./schedule/transformSchedule');
 const checkSchedule = require('./schedule/checkSchedule');
 const getMenuMessage = require('./menu/getMenuMessage');
 const sendMenuMessage = require('./menu/sendMenuMessage');
+const sendWeekMenuMessage = require('./menu/sendWeekMenu');
 const sendOffice = require('./office/sendOffice');
 
 const scheduleDict = transformSchedule();
@@ -41,6 +42,7 @@ rtm.on('message', (message) => {
       rtm.sendMessage('잘못된 입력입니다.', channel);
     }
     isSchedule = false;
+
     // 학과정보에 대해서 입력받았을 때
   } else if (isOffice === true) {
     if (/^[a-zA-Z]([-_. ]?[0-9a-zA-Z])*$/i.test(text)) {
@@ -49,25 +51,36 @@ rtm.on('message', (message) => {
       rtm.sendMessage('잘못된 입력입니다.', channel);
     }
     isOffice = false;
+
     // 제곱 계산
   } else if (Number(text)) {
     square(rtm, text, channel);
+
     // hi라고 하면 대답해줌.
   } else if (/^hi$/i.test(text)) {
     greeting(rtm, channel);
+    rtm.sendMessage('궁금한 정보를 입력해주세요.\n● 학사 일정\n● 학과 안내\n● 오늘 밥 뭐야\n● 이번주 뭐나와', channel);
+
     // 학사 정보를 입력 받았을 때 isSchedule flag를 true로 설정
-  } else if (/^학사?[ ]?[일정]?$/.test(text)) {
+  } else if (/학사[ ]?일정/.test(text)) {
     rtm.sendMessage('안내 받을 날짜를 이야기해주세요.예시) 12/25', channel);
     isSchedule = true;
+
     // 학과 안내를 입력 받았을 때 isOffice flag를 true로 설정
-  } else if (/학과[ ]?[안내]?$/.test(text)) {
-    rtm.sendMessage('안내 받을 힉과를 이야기해주세요. 예시) Computer Science and Engineering', channel);
+  } else if (/학과[ ]?안내/.test(text)) {
+    rtm.sendMessage('안내 받을 학과를 이야기해주세요. 예시) Computer Science and Engineering', channel);
     isOffice = true;
-    // 밥 알려주는 기계
-  } else if (/[오늘]?[ ]?밥[ ]?[뭐야]?/.test(text)) {
+
+    // 오늘의 밥 알려주는 기계
+  } else if (/오늘[ ]?밥[ ]?뭐야/.test(text)) {
     sendMenuMessage(rtm, channel, menuData, menuFlag);
+
+    // 한주단위로 밥 뭐나올지도 알려줍니다
+  } else if (/이번주[ ]?뭐나와/.test(text)) {
+    sendWeekMenuMessage(rtm, channel, menuData, menuFlag);
+
     // 쓰잘대기 없는 말하면 대답은 해주기..
   } else {
-    rtm.sendMessage("I'm alive", channel);
+    rtm.sendMessage('궁금한 정보를 입력해주세요.\n● 학사 일정\n● 학과 안내\n● 오늘 밥 뭐야\n● 이번주 뭐나와', channel);
   }
 });

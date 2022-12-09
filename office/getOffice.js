@@ -1,5 +1,5 @@
 const fs = require('fs');
-const editDistance = require('../utils/editDistance');
+const getSimilarOffice = require('./getSimilarOffice');
 
 const getOffice = function (name) {
   const lowerNameNoSpace = name?.toLowerCase().replace(/\s/g, '');
@@ -16,22 +16,15 @@ const getOffice = function (name) {
       delete deptObject[deptArraySplit[0]];
     }
   }
-  // console.log(deptObject);
-  const office = Object.keys(deptObject).find((key) => key.includes(lowerNameNoSpace));
+
+  const office = Object.keys(deptObject).find((key) => key === lowerNameNoSpace);
   if (office !== undefined) {
     // office 와 deptObject[office]를 반환
-    return deptObject[office];
+    return [deptObject[office]];
   }
-  // office가 undefined면 editDistance를 이용해서 가장 가까운 값을 찾아서 반환
-  const min = Object.keys(deptObject).reduce((acc, cur) => {
-    const distance = editDistance(lowerNameNoSpace, cur);
-    if (distance < acc.distance) {
-      return { distance, office: deptObject[cur] };
-    }
-    return acc;
-  }, { distance: 100, office: null });
-  return min.office;
-  // return false;
+  const simOfficeInfo = getSimilarOffice(deptObject, lowerNameNoSpace);
+  const simOffice = deptObject[simOfficeInfo].split(' - ');
+  return [`혹시 ${simOffice[0]}를 찾고 계신건가요? ${deptObject[simOfficeInfo]}입니다.`];// [lowerName, '이 세상에 없는 곳'];
 };
 module.exports = getOffice;
 /**

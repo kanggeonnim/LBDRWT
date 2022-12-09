@@ -18,7 +18,7 @@ const sendOffice = function (rtm, input, channel) {
     return false;
   }
   rtm.sendMessage(`${location}`, channel); // test시 주석처리
-  console.log(getOffcie(input));
+  // console.log(getOffcie(input));
   return true;
 };
 module.exports = sendOffice;
