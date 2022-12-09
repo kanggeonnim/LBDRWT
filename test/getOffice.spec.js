@@ -15,7 +15,7 @@ describe('===getOffice test start', () => {
       const location = getOffice(num);
       // console.log(location);
       if (location === null) { break; }
-      if (location.toLowerCase().replace(/\s/g, '').includes(num.replace(/\s/g, '').toLowerCase())) {
+      if (location.toString().toLowerCase().replace(/\s/g, '').includes(num.replace(/\s/g, '').toString().toLowerCase())) {
         count -= 1;
         // console.log(count);
       }
