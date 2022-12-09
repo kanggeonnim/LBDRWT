@@ -4,7 +4,7 @@
 ## ✅ Demo
 > When clicking the image, you can watch the demonstration video
 >
-> [![Video Label](http://img.youtube.com/vi/VmyVv6OCSCE/0.jpg)](https://youtu.be/VmyVv6OCSCE)
+> [![Video Label](http://img.youtube.com/vi/WIMAefYGGz0/0.jpg)](https://youtu.be/WIMAefYGGz0)
 ## 🛠 Development Environment
 > - OS: Windows 10 (or MacOS)
 > - JavaScript-Runtime: Node.js (ver. 18.12.0)
