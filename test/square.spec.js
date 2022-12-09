@@ -6,7 +6,7 @@ describe('====Square Test Start!====', () => {
   it('Square Test End!======', (done) => {
     // square 모듈을 사용한 값과 실제 제곱의 값을 비교함.
     // 테스트 횟수동안 항상 같은 값을 뱉어내면 성공
-    const testingCounts = 10000;
+    const testingCounts = 5;
     let count = 0;
 
     for (let i = 1; i <= testingCounts; i += 1) {
