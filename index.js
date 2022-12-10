@@ -27,30 +27,32 @@ getMenuMessage().then((res) => {
   menuData = res;
   menuFlag = true;
 });
-// const menuData = getMenuMessage();
-let isSchedule = false;
-let isOffice = false;
+
+const isSchedule = {};
+const isOffice = {};
+
 rtm.on('message', (message) => {
   const { channel } = message;
   const { text } = message;
+  const { user } = message;
 
   // 학사일정을 입력받았을 떄
-  if (isSchedule === true) {
+  if (isSchedule[user] === true) {
     if (/[0-9][0-9]?\/[0-9][0-9]?/.test(text)) {
       checkSchedule(rtm, channel, scheduleDict, text);
     } else {
       rtm.sendMessage('잘못된 입력입니다.', channel);
     }
-    isSchedule = false;
+    isSchedule[user] = false;
 
     // 학과정보에 대해서 입력받았을 때
-  } else if (isOffice === true) {
+  } else if (isOffice[user] === true) {
     if (/^[a-zA-Z]([-_. ]?[0-9a-zA-Z])*$/i.test(text)) {
       sendOffice(rtm, text, channel);
     } else {
       rtm.sendMessage('잘못된 입력입니다.', channel);
     }
-    isOffice = false;
+    isOffice[user] = false;
 
     // 제곱 계산
   } else if (Number(text)) {
@@ -64,12 +66,12 @@ rtm.on('message', (message) => {
     // 학사 정보를 입력 받았을 때 isSchedule flag를 true로 설정
   } else if (/학사[ ]?일정/.test(text)) {
     rtm.sendMessage('안내 받을 날짜를 이야기해주세요.예시) 12/25', channel);
-    isSchedule = true;
+    isSchedule[user] = true;
 
     // 학과 안내를 입력 받았을 때 isOffice flag를 true로 설정
   } else if (/학과[ ]?안내/.test(text)) {
     rtm.sendMessage('안내 받을 학과를 이야기해주세요. 예시) Computer Science and Engineering', channel);
-    isOffice = true;
+    isOffice[user] = true;
 
     // 오늘의 밥 알려주는 기계
   } else if (/오늘[ ]?밥[ ]?뭐야/.test(text)) {
