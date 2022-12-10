@@ -6,7 +6,7 @@
 >
 > [![Video Label](http://img.youtube.com/vi/WIMAefYGGz0/0.jpg)](https://youtu.be/WIMAefYGGz0)
 >
-# Watch and Follow
+### WatchDemo and Follow
 >
 > First, just say "Hi"
 > Then the chatbot will greet you
