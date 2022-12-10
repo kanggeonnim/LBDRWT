@@ -1,4 +1,24 @@
-
+# 🚩 SLACK CHATBOT
+> This repository is an app for the 2022-JBNU-OSS-Project.
+>
+## ✅ Demo
+> When clicking the image, you can watch the demonstration video
+>
+> [![Video Label](http://img.youtube.com/vi/WIMAefYGGz0/0.jpg)](https://youtu.be/WIMAefYGGz0)
+>
+## 🛠 Development Environment
+> - OS: Windows 10 (or MacOS)
+> - JavaScript-Runtime: Node.js (ver. 18.12.0)
+> - Code Editor: Visual Studio Code
+> - Code Convention: ESLint(Airbnb-base), Prettier
+> - Git Hook: Use Husky (pre-commit, commit-msg)
+> - Comments: Doxygen
+>
+## ⚙ Test & Production Environment
+> - Cloud Server: Ubuntu 22.04 LTS
+> - JavaScript-Runtime: Node.js (ver. 18.12.0)
+> - Git: ver. 2.34.1
+>
 ## 📕 Guide Line
 > - ### FOR USERS
 > #### 1. Install Node.js(ver. 18) and Visual Studio Code.
@@ -65,8 +85,24 @@
 > npx husky add .husky/pre-commit 'eslint . --ext .js'
 > ```
 > Delete 'npm test' in pre-commit file.
->>>>>>> 168d3417560f143e82e96d915e0d3bc9e283194c
 >
+> #### 6. Install commit lint
+> ```
+> npm install --dev @commitlint/config-conventional @commitlint/cli
+> ``` 
+> #### 7. Now you are ready to work together.
 >
+## 🌈 All Versions
+> ### - 1.2.0 (Latest)
+> - Add feature for menu evaluation and guidance
+> - Improve feature for department office information
+> - Change the default notification message 
+> ### - 1.1.0
+> - Improve feature for random greeting
+> - Add feature for academic calendar guide
+> - Add feature for department office information
+> ### - 1.0.0
+> - Add feature for greeting
+> - Output 'I'm alive' for other inputs
 >
 #
