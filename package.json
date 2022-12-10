@@ -9,29 +9,23 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.29.0",
+    "eslint": "^8.27.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.2",
+    "husky": "^8.0.0",
     "mocha": "^10.1.0",
-    "prettier": "^2.8.1"
+    "prettier": "^2.7.1"
   },
   "dependencies": {
-    "@commitlint/cli": "^17.3.0",
-    "@commitlint/config-conventional": "^17.3.0",
     "@slack/rtm-api": "^6.0.0",
-    "axios": "^1.2.0",
-    "cheerio": "^1.0.0-rc.12",
     "data.js": "^0.0.0",
     "dotenv": "^16.0.3",
-    "Husky": "npm:husky@^8.0.2",
-    "js-levenshtein": "^1.1.6",
     "request": "^2.88.2"
   },
   "directories": {
-    "test": "test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -41,5 +35,5 @@
     "url": "https://github.com/kanggeonnim/LBDRWT/issues"
   },
   "homepage": "https://github.com/kanggeonnim/LBDRWT#readme",
-  "description": "> 이 챗봇은 2022 전북대학교 오픈소스소프웨어개발의 팀프로젝트로 만든 챗봇입니다.\r >\r > ![Feature1_AdobeExpress](https://user-images.githubusercontent.com/61104736/203731470-f411fbe1-1e6c-4c75-9ed5-be7f01af7f99.gif)\r >\r > ![Feature2_AdobeExpress](https://user-images.githubusercontent.com/61104736/203731861-e1dd9cca-edfd-4532-b01d-48509d90c2c5.gif)\r >\r > ![Feature4_AdobeExpress](https://user-images.githubusercontent.com/61104736/203732245-fa0b028d-5094-41be-9995-64f03785c3dc.gif)"
+  "description": ""
 }
