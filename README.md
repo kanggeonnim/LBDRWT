@@ -21,14 +21,13 @@
 ## 📕 Guide Line
 > - ### FOR USERS
 > #### 1. Install Node.js(ver. 18) and Visual Studio Code.
-> #### 2. Clone our repository.
-> #### 3. Unzip the **LBDRWT-main.zip**.
-> #### 4. Open the **LBDRWT-main** directory in Visual Studio Code.
-> #### 5. Open a terminal window in vscode and type the following:
+> #### 2. Clone our repository or Unzip the **LBDRWT-main.zip**.
+> #### 3. Open the (**LBDRWT-main** or clone) directory in Visual Studio Code.
+> #### 4. Open a terminal window in vscode and type the following:
 > ```
 > npm install
 > ```
-> #### 6. Create a new directory named **'data'**, and create **token.js** in the 'data directory'.
+> #### 5. Create a new directory named **'data'**, and create **token.js** in the 'data directory'.
 > ```
 > const data = 'Enter your token';
 > 
@@ -39,11 +38,11 @@
 > module.exports.getToken = getToken;
 > 
 > ```
-> #### 7. Type the following:
+> #### 6. Type the following:
 > ```
 > node index.js
 > ```
-> #### 8. When it runs normally, you can see the token printed out.
+> #### 7. When it runs normally, you can see the token printed out.
 > #
 > - ### FOR NEW COLLABORATORS
 > #### 1. Complete all of the above guides.(For git clone, use github desktop or git bash.)
