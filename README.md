@@ -26,8 +26,7 @@
 > #### 4. Open the **LBDRWT-main** directory in Visual Studio Code.
 > #### 5. Open a terminal window in vscode and type the following:
 > ```
-> npm init
-> npm install @slack/rtm-api dotenv
+> npm install
 > ```
 > #### 6. Create a new directory named **'data'**, and create **token.js** in the 'data directory'.
 > ```
