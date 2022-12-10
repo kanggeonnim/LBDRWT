@@ -81,8 +81,6 @@ rtm.on('message', (message) => {
   } else if (/이번주[ ]?뭐나와/.test(text)) {
     sendWeekMenuMessage(rtm, channel, menuData, menuFlag);
     // 쓰잘대기 없는 말하면 대답은 해주기..
-  } else if (text === 'test') {
-    rtm.sendMessage('새로운 버전입니다.', channel);
   } else {
     rtm.sendMessage('궁금한 정보를 입력해주세요.\n● 학사 일정\n● 학과 안내\n● 오늘 밥 뭐야\n● 이번주 뭐나와', channel);
   }
