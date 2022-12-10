@@ -28,6 +28,7 @@ getMenuMessage().then((res) => {
   menuFlag = true;
 });
 
+
 const isSchedule = {};
 const isOffice = {};
 
