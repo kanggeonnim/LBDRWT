@@ -2,8 +2,9 @@ const fs = require('fs');
 const getSimilarOffice = require('./getSimilarOffice');
 
 const getOffice = function (name) {
-  const lowerName = name.toLowerCase();
-  const lowerNameNoSpace = lowerName.replace(/\s/g, '');
+  // console.log(`${name} getOffice 입력된 값`);
+  const lowerNameNoSpace = name?.toLowerCase().replace(/\s/g, '');
+
   const dept = fs.readFileSync('./source/dept.txt', 'utf8');
   const deptArray = dept.split(/\r\n|\n/);
   const deptObject = {};
@@ -24,7 +25,7 @@ const getOffice = function (name) {
   }
   const simOfficeInfo = getSimilarOffice(deptObject, lowerNameNoSpace);
   const simOffice = deptObject[simOfficeInfo].split(' - ');
-  return [`혹시 ${simOffice[0]}를 찾고 계신건가요? ${deptObject[simOfficeInfo]}입니다.`];// [lowerName, '이 세상에 없는 곳'];
+  return [`혹시 ${simOffice[0]}를 찾고 계신건가요? ${deptObject[simOfficeInfo]}입니다.`];
 };
 module.exports = getOffice;
 /**
