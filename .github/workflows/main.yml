@@ -5,7 +5,7 @@ on:
       branches: [ feature* ]
       
     pull_request:
-      branches: [ main, dev, release ]
+      branches: [ main, develop, release ]
 
 jobs:
   build:
@@ -31,5 +31,6 @@ jobs:
         mocha ./test/greeting.spec.js
         mocha ./test/schedule.spec.js
         mocha ./test/getOffice.spec.js
+        mocha --timeout 15000 ./test/getDailyMenu.spec.js
       env:
         CI: true
