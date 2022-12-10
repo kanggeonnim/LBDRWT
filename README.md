@@ -20,16 +20,16 @@
 >
 ## 📕 Guide Line
 > - ### FOR USERS
-> 1. Install Node.js(ver. 18) and Visual Studio Code.
-> 2. Clone our repository.
-> 3. Unzip the **LBDRWT-main.zip**.
-> 4. Open the **LBDRWT-main** directory in Visual Studio Code.
-> 5. Open a terminal window in vscode and type the following:
+> #### 1. Install Node.js(ver. 18) and Visual Studio Code.
+> #### 2. Clone our repository.
+> #### 3. Unzip the **LBDRWT-main.zip**.
+> #### 4. Open the **LBDRWT-main** directory in Visual Studio Code.
+> #### 5. Open a terminal window in vscode and type the following:
 > ```
 > npm init
 > npm install @slack/rtm-api dotenv
 > ```
-> 6. Create a new directory named **'data'**, and create **token.js** in the 'data directory'.
+> #### 6. Create a new directory named **'data'**, and create **token.js** in the 'data directory'.
 > ```
 > const data = 'Enter your token';
 > 
@@ -40,17 +40,17 @@
 > module.exports.getToken = getToken;
 > 
 > ```
-> 7. Type the following:
+> #### 7. Type the following:
 > ```
 > node index.js
 > ```
-> 8. When it runs normally, you can see the token printed out.
+> #### 8. When it runs normally, you can see the token printed out.
 > #
 > - ### FOR NEW COLLABORATORS
-> 1. Complete all of the above guides.(For git clone, use github desktop or git bash.)
-> 2. Install the following from VSCode's extensions:
+> #### 1. Complete all of the above guides.(For git clone, use github desktop or git bash.)
+> #### 2. Install the following from VSCode's extensions:
 > ![image](https://user-images.githubusercontent.com/61104736/206609028-55d060e1-ce5f-4c2a-ab4e-65753538cf2e.png)
-> 3. Open a terminal window in vscode and type the following:
+> #### 3. Open a terminal window in vscode and type the following:
 > ```
 > npm install -g eslint eslint-config-airbnb-base eslint-plugin-import
 > eslint --init
@@ -59,7 +59,7 @@
 > ```
 > npx install-peerdeps --dev eslint-config-airbnb
 > ```
-> 4. Edit .eslintrc.js
+> #### 4. Edit .eslintrc.js
 > ```
 > module.exports = {
 >  root: true,
@@ -79,18 +79,20 @@
 >  },
 >};
 > ```
-> 5. Install husky for git hook
+> #### 5. Install husky for git hook
 > ```
 > npx husky-init
 > npm install
 > npx husky add .husky/pre-commit 'eslint . --ext .js'
 > ```
 > Delete 'npm test' in pre-commit file.
-> 6. Install commit lint
+>
+> #### 6. Install commit lint
 > ```
 > npm install --dev @commitlint/config-conventional @commitlint/cli
 > ```
-> 7. Now you are ready to work together.
+> #### 7. Now you are ready to work together.
+>
 ## 🌈 모든 버전
 > ### - 1.2.0 (Latest)
 > - Add feature for menu evaluation and guidance
