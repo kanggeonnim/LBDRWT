@@ -92,7 +92,7 @@
 > ```
 > #### 7. Now you are ready to work together.
 >
-## 🌈 모든 버전
+## 🌈 All Versions
 > ### - 1.2.0 (Latest)
 > - Add feature for menu evaluation and guidance
 > - Improve feature for department office information
