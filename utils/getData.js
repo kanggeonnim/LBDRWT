@@ -10,10 +10,10 @@ const getData = function (num) {
   for (let i = 0; i < deptArray.length; i += 1) {
     const deptArraySplit = deptArray[i].split('-');
     // eslint-disable-next-line prefer-destructuring
-    deptObject[deptArraySplit[0].toLowerCase().replace(/\s/g, '')] = deptArray[i];
+    deptObject[deptArraySplit[0]] = deptArray[i];
   }
   const key = Object.keys(deptObject);
-  const crab = key.map((item) => item.toLowerCase());
+  const crab = key.map((item) => item);
   return crab[num];
 };
 module.exports = getData;

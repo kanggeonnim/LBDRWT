@@ -10,8 +10,15 @@
 const getOffcie = require('./getOffice');
 
 const sendOffice = function (rtm, input, channel) {
-  const [location] = getOffcie(input);
+  // console.log(getOffice(input));
+  const location = getOffcie(input);
+
+  if (location === false) {
+    rtm.sendMessage('해당 부서는 존재하지 않습니다.', channel);
+    return false;
+  }
   rtm.sendMessage(`${location}`, channel); // test시 주석처리
   // console.log(getOffcie(input));
+  return true;
 };
 module.exports = sendOffice;
