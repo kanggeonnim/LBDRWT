@@ -222,5 +222,7 @@ $RECYCLE.BIN/
 # token
 /data
 
+# shell script
+*.sh
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,windows,node
 
