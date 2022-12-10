@@ -1,4 +1,4 @@
-name: Actions for Unit Testing
+name: JBNU-actions
 
 on:
     push:
@@ -19,18 +19,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install Mocha
+    - name: Unit Test
       run:
         npm install mocha -g
-    - name: Install js-levenshtein
-      run:
-            npm install --save js-levenshtein
-    - name: Unit Testing
-      run:
-        mocha ./test/square.spec.js
-        mocha ./test/greeting.spec.js
-        mocha ./test/schedule.spec.js
-        mocha ./test/getOffice.spec.js
-        mocha --timeout 15000 ./test/getDailyMenu.spec.js
+        mocha
+        
       env:
         CI: true
