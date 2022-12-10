@@ -27,7 +27,7 @@ getMenuMessage().then((res) => {
   menuData = res;
   menuFlag = true;
 });
-
+// const menuData = getMenuMessage();
 let isSchedule = false;
 let isOffice = false;
 rtm.on('message', (message) => {
