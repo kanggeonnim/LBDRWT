@@ -5,6 +5,25 @@
 > When clicking the image, you can watch the demonstration video
 >
 > [![Video Label](http://img.youtube.com/vi/WIMAefYGGz0/0.jpg)](https://youtu.be/WIMAefYGGz0)
+>
+### WatchDemo and Follow
+>
+> First, just say "Hi"
+> Then the chatbot will greet you
+>
+> Second, say "학사 일정" and Ask questions about the date. ex) 9/1
+> Then the chatbot will tell you the schedule for the day.
+>
+> Third, say "학과 안내" and enter the department you are interested in.
+> Then the chatbot will give you the department information.
+>
+> If you are hungry, say "오늘 밥 뭐야"
+> Then the chatbot will tell you the menu for the day.
+>
+> If your happiness is to eat, so if you want to know the food of the week, say "이번주 뭐나와"
+> Then the chatbot will tell you the menu for the week.
+>
+>
 ## 🛠 Development Environment
 > - OS: Windows 10 (or MacOS)
 > - JavaScript-Runtime: Node.js (ver. 18.12.0)
@@ -88,7 +107,7 @@
 > #### 6. Install commit lint
 > ```
 > npm install --dev @commitlint/config-conventional @commitlint/cli
-> ```
+> ``` 
 > #### 7. Now you are ready to work together.
 >
 ## 🌈 All Versions
