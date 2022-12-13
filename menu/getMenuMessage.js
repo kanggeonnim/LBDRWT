@@ -13,7 +13,7 @@ const getMenuMessage = async function () {
     const selector = (param === 3) ? `${baseSelector}td:nth-child(${param}) ul li > span` : `${baseSelector}td:nth-child(${param}) ul li > font`;
     const result = await webScraping(url, selector);
     const score = getRating(result[0]);
-    message = `${result}(으)입니다.\n평점은 ${star[score - 1]}입니다.`;
+    message = `${result}입니다.\n평점은 ${star[score - 1]}입니다.`;
     messages.push(message);
   }
   console.log(messages);
